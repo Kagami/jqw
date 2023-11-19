@@ -1,0 +1,5 @@
+*
+!/lib/index.js
+!/lib/index.d.ts
+!/jq.js
+!/jq.wasm

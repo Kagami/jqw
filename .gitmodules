@@ -1,0 +1,4 @@
+[submodule "jq"]
+	path = jq
+	url = https://github.com/jqlang/jq.git
+	ignore = dirty

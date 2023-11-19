@@ -1,0 +1,33 @@
+{
+  "name": "jqw",
+  "version": "0.0.0",
+  "description": "JQ compiled to WebAssembly",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "prepublishOnly": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kagami/jqw.git"
+  },
+  "keywords": [
+    "jq",
+    "json",
+    "webassembly",
+    "wasm"
+  ],
+  "author": "Kagami Hiiragi",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/Kagami/jqw/issues"
+  },
+  "homepage": "https://github.com/Kagami/jqw#readme",
+  "devDependencies": {
+    "kpopnet.json": "^2.0.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  }
+}
