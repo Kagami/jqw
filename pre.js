@@ -2,7 +2,7 @@ var jqwWasmResolve = null;
 var jqwWasmPromise = new Promise(resolve => jqwWasmResolve = resolve);
 var jqwLoaded = false;
 var jqwStdout = "";
-var wasmFS$backends; // FIXME(Kagami): closure bug, report
+var wasmFS$backends; // XXX(Kagami): closure bug #16816
 
 Module = {
   "thisProgram": "jq",
@@ -37,12 +37,16 @@ function jqwOnMessage(e) {
   }
 
   if (msg["type"] === "set") {
-    FS_unlink(msg["path"]); // FIXME(Kagami): appends instead of overwriting, report
+    FS_unlink(msg["path"]); // XXX(Kagami): append bug #20750
     FS_writeFile(msg["path"], msg["data"]);
     self.postMessage({ "type": "set" });
   } else if (msg["type"] === "run") {
+    if (msg["path"]) {
+      FS_unlink(msg["path"]);
+      FS_writeFile(msg["path"], msg["data"]);
+    }
     jqwStdout = "";
-    withStackSave(() => callMain(msg["data"]));
+    withStackSave(() => callMain(msg["args"]));
     self.postMessage({ "type": "done", "data": jqwStdout });
   } else {
     Module["onAbort"]("unknown command");

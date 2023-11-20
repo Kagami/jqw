@@ -37,6 +37,14 @@ class JQHandler {
   }
 
   run(...args: string[]): Promise<string> {
+    return this.writeRun("", args, "");
+  }
+
+  async writeRun(
+    data: string,
+    args: string[],
+    path = "data.json"
+  ): Promise<string> {
     return new Promise((resolve, reject) => {
       if (this.running) throw Error("already running");
       this.running = true;
@@ -50,7 +58,7 @@ class JQHandler {
           reject(Error(msg.data));
         }
       };
-      this.worker.postMessage({ type: "run", data: args });
+      this.worker.postMessage({ type: "run", path, data, args });
     });
   }
 }

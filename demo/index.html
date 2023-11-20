@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline';"
+    />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>jqw demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="demo.ts"></script>
+  </head>
+  <body>
+    <div id="top">
+      <h1>jqw demo</h1>
+      <div id="links">
+        <a href="https://github.com/Kagami/jqw" target="_blank">Code</a>
+        <a href="https://gitlab.com/jiehong/jq_offline" target="_blank"
+          >Original code</a
+        >
+        <a href="https://jqlang.github.io/jq/manual/" target="_blank">Manual</a>
+      </div>
+    </div>
+    <div id="content">
+      <div id="query">
+        <label id="filter-label" for="filter">Query</label>
+        <input
+          id="filter"
+          type="text"
+          name="filter"
+          autocapitalize="off"
+          autocomplete="on"
+          spellcheck="false"
+          autocorrect="off"
+          autofocus
+        />
+        <ul id="options">
+          <p>Options</p>
+          <li>
+            <input type="checkbox" id="mono-output" name="mo" />
+            <label for="mo" title="Disable colored output."
+              >--monochrome-output</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="compact-output" name="co" />
+            <label
+              for="co"
+              title="By default, jq pretty-prints JSON output. Using this option will result in more compact output by instead putting each JSON object on a single line."
+              >--compact-output</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="sort-keys" name="sk" />
+            <label
+              for="sk"
+              title="Output the fields of each object with the keys in sorted order."
+              >--sort-key</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="raw-input" name="ri" />
+            <label
+              for="ri"
+              title="Don't parse the input as JSON. Instead, each line of text is passed to the filter as a string. If combined with --slurp, then the entire input is passed to the filter as a single long string."
+              >--raw-input</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="raw-output" name="ro" />
+            <label
+              for="ro"
+              title="With this option, if the filter's result is a string then it will be written directly to standard output rather than being formatted as a JSON string with quotes. This can be useful for making jq filters talk to non-JSON-based systems."
+              >--raw-output</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="slurp" name="s" />
+            <label
+              for="s"
+              title="Instead of running the filter for each JSON object in the input, read the entire input stream into a large array and run the filter just once."
+              >--slurp</label
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div id="input">
+        <label id="input-label" for="input-json"
+          >Input
+          <button id="input-sample">sample</button>
+        </label>
+        <textarea
+          id="input-json"
+          name="input"
+          placeholder="Paste your input json here"
+          autocapitalize="off"
+          autocomplete="off"
+          spellcheck="false"
+          autocorrect="off"
+        ></textarea>
+      </div>
+
+      <div id="output">
+        <label id="output-label" for="output-json">Result</label>
+        <div id="output-json" placeholder="Output will appear here"></div>
+      </div>
+    </div>
+  </body>
+</html>

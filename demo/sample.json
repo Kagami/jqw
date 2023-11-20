@@ -1,0 +1,397 @@
+[
+  {
+    "sha": "88f01a741c8d63c4d1b5bc3ef61520c6eb93edaa",
+    "node_id": "C_kwDOAE3WVdoAKDg4ZjAxYTc0MWM4ZDYzYzRkMWI1YmMzZWY2MTUyMGM2ZWI5M2VkYWE",
+    "commit": {
+      "author": {
+        "name": "Andreas Heiduk",
+        "email": "asheiduk@users.noreply.github.com",
+        "date": "2023-11-16T20:14:58Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-11-16T20:14:58Z"
+      },
+      "message": "simplify paths/0 and paths/1\n\n`recurse/0` already handles traversing objects and arrays, so it is more\r\nconsistent to use that.\r\nFor `paths/1` it is easier to use the actual value returned by\r\n`recurse` instead of querying that value with `getpath/1` afterwards.",
+      "tree": {
+        "sha": "046e21333f46c5b5369366c7e1367baa3f5e4096",
+        "url": "https://api.github.com/repos/jqlang/jq/git/trees/046e21333f46c5b5369366c7e1367baa3f5e4096"
+      },
+      "url": "https://api.github.com/repos/jqlang/jq/git/commits/88f01a741c8d63c4d1b5bc3ef61520c6eb93edaa",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJlVnhCCRBK7hj4Ov3rIwAAITcIABGM8MR1W3l+jfGalXyClr1b\nyPw1CnT6b8cbhCUiWf2D341AFuvkKCXbdavZ0EBI7Elnpucp6PVIIzVns5FoGeDE\n9nm60VECnOwoe6+ppxnjK0/0ohm+rR7MBcRA4OQ/qIJgZj30bYpJrMfS3jBOMJum\neKm0OlN917lGODb1zpCQgV/+NcgoiCQCJSvPRDiMco+xiVqOzZq05/gZq+ASq8+p\neA+8XXq88PnrBpyQmj/n5CSTWpMChoYP9Krfy3OaUiR42CVZXnDmF5cRMWUjoc5L\njGxOXJIxjFnstI+Uf8bjT1iZzqNf6KGTuqcmsqLsLC1OqHziNiCn2hwIKIHXVKI=\n=1cR+\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 046e21333f46c5b5369366c7e1367baa3f5e4096\nparent 6c035133e876c1ce5cbafe53164d0dc513c4e766\nauthor Andreas Heiduk <asheiduk@users.noreply.github.com> 1700165698 +0100\ncommitter GitHub <noreply@github.com> 1700165698 +0100\n\nsimplify paths/0 and paths/1\n\n`recurse/0` already handles traversing objects and arrays, so it is more\r\nconsistent to use that.\r\nFor `paths/1` it is easier to use the actual value returned by\r\n`recurse` instead of querying that value with `getpath/1` afterwards."
+      }
+    },
+    "url": "https://api.github.com/repos/jqlang/jq/commits/88f01a741c8d63c4d1b5bc3ef61520c6eb93edaa",
+    "html_url": "https://github.com/jqlang/jq/commit/88f01a741c8d63c4d1b5bc3ef61520c6eb93edaa",
+    "comments_url": "https://api.github.com/repos/jqlang/jq/commits/88f01a741c8d63c4d1b5bc3ef61520c6eb93edaa/comments",
+    "author": {
+      "login": "asheiduk",
+      "id": 9371344,
+      "node_id": "MDQ6VXNlcjkzNzEzNDQ=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9371344?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/asheiduk",
+      "html_url": "https://github.com/asheiduk",
+      "followers_url": "https://api.github.com/users/asheiduk/followers",
+      "following_url": "https://api.github.com/users/asheiduk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/asheiduk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/asheiduk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/asheiduk/subscriptions",
+      "organizations_url": "https://api.github.com/users/asheiduk/orgs",
+      "repos_url": "https://api.github.com/users/asheiduk/repos",
+      "events_url": "https://api.github.com/users/asheiduk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/asheiduk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6c035133e876c1ce5cbafe53164d0dc513c4e766",
+        "url": "https://api.github.com/repos/jqlang/jq/commits/6c035133e876c1ce5cbafe53164d0dc513c4e766",
+        "html_url": "https://github.com/jqlang/jq/commit/6c035133e876c1ce5cbafe53164d0dc513c4e766"
+      }
+    ]
+  },
+  {
+    "sha": "6c035133e876c1ce5cbafe53164d0dc513c4e766",
+    "node_id": "C_kwDOAE3WVdoAKDZjMDM1MTMzZTg3NmMxY2U1Y2JhZmU1MzE2NGQwZGM1MTNjNGU3NjY",
+    "commit": {
+      "author": {
+        "name": "Emanuele Torre",
+        "email": "torreemanuele6@gmail.com",
+        "date": "2023-11-06T14:59:22Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-11-06T14:59:22Z"
+      },
+      "message": "README.md: to`sed` => to `sed` (#2944)",
+      "tree": {
+        "sha": "82294bdd33a6c93af93ad59f003ea2c5669b3de6",
+        "url": "https://api.github.com/repos/jqlang/jq/git/trees/82294bdd33a6c93af93ad59f003ea2c5669b3de6"
+      },
+      "url": "https://api.github.com/repos/jqlang/jq/git/commits/6c035133e876c1ce5cbafe53164d0dc513c4e766",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJlSP9KCRBK7hj4Ov3rIwAAsh4IABmnN/pVvfMda5jSj7qkwomQ\n8ZSLs5YzI96sZTfDICpS+/PG4tPvVFDNVwVkFt1PqXG3jNAzu94Dvuzes/0yJ9C2\nFvC9aGF9p8cub8EJkOVm7m/EzD8NkSGHWBDntc2wUtQwbaFS/+GuCtlTw8G1qZXM\n1lE18LdeQdMni5OVUly5wBmWmiM5EZaaAn54hm6u1WvCSKcZw8hcTdmThAqq2gHh\njjpm/YHPTZF0M4ifIzSSelZeZGw7Lqyv6vzd475oqascae8LqFetSvfRf9/5b6g2\ntcNvj00jsebEtL+7yn/Gt0ngCcJMmwfeCSgYUIa2dn0pRhqcIsUEE5pCIHLKFqg=\n=IHa9\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 82294bdd33a6c93af93ad59f003ea2c5669b3de6\nparent cca1f7d18f2fa6721952645821ae429a0166d7e4\nauthor Emanuele Torre <torreemanuele6@gmail.com> 1699282762 +0100\ncommitter GitHub <noreply@github.com> 1699282762 +0900\n\nREADME.md: to`sed` => to `sed` (#2944)\n\n"
+      }
+    },
+    "url": "https://api.github.com/repos/jqlang/jq/commits/6c035133e876c1ce5cbafe53164d0dc513c4e766",
+    "html_url": "https://github.com/jqlang/jq/commit/6c035133e876c1ce5cbafe53164d0dc513c4e766",
+    "comments_url": "https://api.github.com/repos/jqlang/jq/commits/6c035133e876c1ce5cbafe53164d0dc513c4e766/comments",
+    "author": {
+      "login": "emanuele6",
+      "id": 20175435,
+      "node_id": "MDQ6VXNlcjIwMTc1NDM1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20175435?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/emanuele6",
+      "html_url": "https://github.com/emanuele6",
+      "followers_url": "https://api.github.com/users/emanuele6/followers",
+      "following_url": "https://api.github.com/users/emanuele6/following{/other_user}",
+      "gists_url": "https://api.github.com/users/emanuele6/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/emanuele6/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/emanuele6/subscriptions",
+      "organizations_url": "https://api.github.com/users/emanuele6/orgs",
+      "repos_url": "https://api.github.com/users/emanuele6/repos",
+      "events_url": "https://api.github.com/users/emanuele6/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/emanuele6/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "cca1f7d18f2fa6721952645821ae429a0166d7e4",
+        "url": "https://api.github.com/repos/jqlang/jq/commits/cca1f7d18f2fa6721952645821ae429a0166d7e4",
+        "html_url": "https://github.com/jqlang/jq/commit/cca1f7d18f2fa6721952645821ae429a0166d7e4"
+      }
+    ]
+  },
+  {
+    "sha": "cca1f7d18f2fa6721952645821ae429a0166d7e4",
+    "node_id": "C_kwDOAE3WVdoAKGNjYTFmN2QxOGYyZmE2NzIxOTUyNjQ1ODIxYWU0MjlhMDE2NmQ3ZTQ",
+    "commit": {
+      "author": {
+        "name": "Emanuele Torre",
+        "email": "torreemanuele6@gmail.com",
+        "date": "2023-11-03T18:53:33Z"
+      },
+      "committer": {
+        "name": "Nico Williams",
+        "email": "nico@cryptonector.com",
+        "date": "2023-11-03T20:52:02Z"
+      },
+      "message": "Comment bug fixes, and fully support Tcl-style multiline comments\n\n* bugfix: comments were incorrectly being terminated by CR; for example\n    jq -n $'1 #foo\\r'\n  fails to compile because the CR character terminates the comment, and\n  CR is not a valid character in jq syntax.\n\n* improvement: comments fully support Tcl-style line continuation.\n  Previously this was only \"supported\" in `-f' scripts, whose first line\n  starts with \"#!\", and second line starts with # and ends with \\, only\n  for the comment on the second line, only for one extra line.\n\n* man: document comment syntax, which was previously undocumented.\n\n* tests: add regression tests for the bugfix, and some tests for line\n  continuation in comments.",
+      "tree": {
+        "sha": "85b685c0aaba0eeacdecda274cb76b617350713e",
+        "url": "https://api.github.com/repos/jqlang/jq/git/trees/85b685c0aaba0eeacdecda274cb76b617350713e"
+      },
+      "url": "https://api.github.com/repos/jqlang/jq/git/commits/cca1f7d18f2fa6721952645821ae429a0166d7e4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/jqlang/jq/commits/cca1f7d18f2fa6721952645821ae429a0166d7e4",
+    "html_url": "https://github.com/jqlang/jq/commit/cca1f7d18f2fa6721952645821ae429a0166d7e4",
+    "comments_url": "https://api.github.com/repos/jqlang/jq/commits/cca1f7d18f2fa6721952645821ae429a0166d7e4/comments",
+    "author": {
+      "login": "emanuele6",
+      "id": 20175435,
+      "node_id": "MDQ6VXNlcjIwMTc1NDM1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20175435?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/emanuele6",
+      "html_url": "https://github.com/emanuele6",
+      "followers_url": "https://api.github.com/users/emanuele6/followers",
+      "following_url": "https://api.github.com/users/emanuele6/following{/other_user}",
+      "gists_url": "https://api.github.com/users/emanuele6/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/emanuele6/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/emanuele6/subscriptions",
+      "organizations_url": "https://api.github.com/users/emanuele6/orgs",
+      "repos_url": "https://api.github.com/users/emanuele6/repos",
+      "events_url": "https://api.github.com/users/emanuele6/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/emanuele6/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "nicowilliams",
+      "id": 604851,
+      "node_id": "MDQ6VXNlcjYwNDg1MQ==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/604851?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicowilliams",
+      "html_url": "https://github.com/nicowilliams",
+      "followers_url": "https://api.github.com/users/nicowilliams/followers",
+      "following_url": "https://api.github.com/users/nicowilliams/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicowilliams/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicowilliams/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicowilliams/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicowilliams/orgs",
+      "repos_url": "https://api.github.com/users/nicowilliams/repos",
+      "events_url": "https://api.github.com/users/nicowilliams/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicowilliams/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f4929f3c19fc8486aac66ab0378fb3995adb3b6d",
+        "url": "https://api.github.com/repos/jqlang/jq/commits/f4929f3c19fc8486aac66ab0378fb3995adb3b6d",
+        "html_url": "https://github.com/jqlang/jq/commit/f4929f3c19fc8486aac66ab0378fb3995adb3b6d"
+      }
+    ]
+  },
+  {
+    "sha": "f4929f3c19fc8486aac66ab0378fb3995adb3b6d",
+    "node_id": "C_kwDOAE3WVdoAKGY0OTI5ZjNjMTlmYzg0ODZhYWM2NmFiMDM3OGZiMzk5NWFkYjNiNmQ",
+    "commit": {
+      "author": {
+        "name": "Emanuele Torre",
+        "email": "torreemanuele6@gmail.com",
+        "date": "2023-10-29T03:30:01Z"
+      },
+      "committer": {
+        "name": "Nico Williams",
+        "email": "nico@cryptonector.com",
+        "date": "2023-10-31T03:12:27Z"
+      },
+      "message": "src/builtin.c: remove unnecessary jv_copy-s in type_error/type_error2\n\nAlso fix doubled semicolon   jv ret;;   =>   jv ret;",
+      "tree": {
+        "sha": "66d46a409ce53928c7b86d6d775f3462c4d3e500",
+        "url": "https://api.github.com/repos/jqlang/jq/git/trees/66d46a409ce53928c7b86d6d775f3462c4d3e500"
+      },
+      "url": "https://api.github.com/repos/jqlang/jq/git/commits/f4929f3c19fc8486aac66ab0378fb3995adb3b6d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/jqlang/jq/commits/f4929f3c19fc8486aac66ab0378fb3995adb3b6d",
+    "html_url": "https://github.com/jqlang/jq/commit/f4929f3c19fc8486aac66ab0378fb3995adb3b6d",
+    "comments_url": "https://api.github.com/repos/jqlang/jq/commits/f4929f3c19fc8486aac66ab0378fb3995adb3b6d/comments",
+    "author": {
+      "login": "emanuele6",
+      "id": 20175435,
+      "node_id": "MDQ6VXNlcjIwMTc1NDM1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20175435?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/emanuele6",
+      "html_url": "https://github.com/emanuele6",
+      "followers_url": "https://api.github.com/users/emanuele6/followers",
+      "following_url": "https://api.github.com/users/emanuele6/following{/other_user}",
+      "gists_url": "https://api.github.com/users/emanuele6/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/emanuele6/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/emanuele6/subscriptions",
+      "organizations_url": "https://api.github.com/users/emanuele6/orgs",
+      "repos_url": "https://api.github.com/users/emanuele6/repos",
+      "events_url": "https://api.github.com/users/emanuele6/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/emanuele6/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "nicowilliams",
+      "id": 604851,
+      "node_id": "MDQ6VXNlcjYwNDg1MQ==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/604851?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicowilliams",
+      "html_url": "https://github.com/nicowilliams",
+      "followers_url": "https://api.github.com/users/nicowilliams/followers",
+      "following_url": "https://api.github.com/users/nicowilliams/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicowilliams/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicowilliams/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicowilliams/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicowilliams/orgs",
+      "repos_url": "https://api.github.com/users/nicowilliams/repos",
+      "events_url": "https://api.github.com/users/nicowilliams/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicowilliams/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d5590f90dad1764a7e0aa35f83c6ef4611939194",
+        "url": "https://api.github.com/repos/jqlang/jq/commits/d5590f90dad1764a7e0aa35f83c6ef4611939194",
+        "html_url": "https://github.com/jqlang/jq/commit/d5590f90dad1764a7e0aa35f83c6ef4611939194"
+      }
+    ]
+  },
+  {
+    "sha": "d5590f90dad1764a7e0aa35f83c6ef4611939194",
+    "node_id": "C_kwDOAE3WVdoAKGQ1NTkwZjkwZGFkMTc2NGE3ZTBhYTM1ZjgzYzZlZjQ2MTE5MzkxOTQ",
+    "commit": {
+      "author": {
+        "name": "Emanuele Torre",
+        "email": "torreemanuele6@gmail.com",
+        "date": "2023-10-28T21:58:03Z"
+      },
+      "committer": {
+        "name": "Nico Williams",
+        "email": "nico@cryptonector.com",
+        "date": "2023-10-31T03:12:27Z"
+      },
+      "message": "jvp_object_contains: remove unnecessary jv_copy",
+      "tree": {
+        "sha": "e3967b85ab273d150cb226273161de3a3765585a",
+        "url": "https://api.github.com/repos/jqlang/jq/git/trees/e3967b85ab273d150cb226273161de3a3765585a"
+      },
+      "url": "https://api.github.com/repos/jqlang/jq/git/commits/d5590f90dad1764a7e0aa35f83c6ef4611939194",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/jqlang/jq/commits/d5590f90dad1764a7e0aa35f83c6ef4611939194",
+    "html_url": "https://github.com/jqlang/jq/commit/d5590f90dad1764a7e0aa35f83c6ef4611939194",
+    "comments_url": "https://api.github.com/repos/jqlang/jq/commits/d5590f90dad1764a7e0aa35f83c6ef4611939194/comments",
+    "author": {
+      "login": "emanuele6",
+      "id": 20175435,
+      "node_id": "MDQ6VXNlcjIwMTc1NDM1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20175435?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/emanuele6",
+      "html_url": "https://github.com/emanuele6",
+      "followers_url": "https://api.github.com/users/emanuele6/followers",
+      "following_url": "https://api.github.com/users/emanuele6/following{/other_user}",
+      "gists_url": "https://api.github.com/users/emanuele6/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/emanuele6/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/emanuele6/subscriptions",
+      "organizations_url": "https://api.github.com/users/emanuele6/orgs",
+      "repos_url": "https://api.github.com/users/emanuele6/repos",
+      "events_url": "https://api.github.com/users/emanuele6/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/emanuele6/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "nicowilliams",
+      "id": 604851,
+      "node_id": "MDQ6VXNlcjYwNDg1MQ==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/604851?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nicowilliams",
+      "html_url": "https://github.com/nicowilliams",
+      "followers_url": "https://api.github.com/users/nicowilliams/followers",
+      "following_url": "https://api.github.com/users/nicowilliams/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nicowilliams/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nicowilliams/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nicowilliams/subscriptions",
+      "organizations_url": "https://api.github.com/users/nicowilliams/orgs",
+      "repos_url": "https://api.github.com/users/nicowilliams/repos",
+      "events_url": "https://api.github.com/users/nicowilliams/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nicowilliams/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e85e3582330af543f1a7b293c6b9b27f342670a2",
+        "url": "https://api.github.com/repos/jqlang/jq/commits/e85e3582330af543f1a7b293c6b9b27f342670a2",
+        "html_url": "https://github.com/jqlang/jq/commit/e85e3582330af543f1a7b293c6b9b27f342670a2"
+      }
+    ]
+  }
+]

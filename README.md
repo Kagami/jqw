@@ -2,7 +2,7 @@
 
 [JQ](https://jqlang.github.io/jq/) compiled to WebAssembly.
 
-See [bench](bench/index.ts) for usage example.
+See [bench](bench/bench.ts) and [demo](demo/demo.ts) for usage examples.
 
 ## Install
 
@@ -19,6 +19,7 @@ npm i jqw
 
 ## Demo
 
+- [kagami.github.io/jqw](https://kagami.github.io/jqw/)
 - [net.kpop.re](https://net.kpop.re/?jq=)
 
 ## License
