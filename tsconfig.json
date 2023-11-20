@@ -6,6 +6,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "types": ["vite/client"],
-    "declaration": true
+    "declaration": true,
+    "skipLibCheck": true
   }
 }
