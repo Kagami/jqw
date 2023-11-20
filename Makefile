@@ -4,7 +4,7 @@ JQW_LDFLAGS = $(JQW_CFLAGS) \
 	--pre-js pre.js \
 	-s WASMFS=1 \
 	-s INVOKE_RUN=0 \
-	-s EXPORTED_RUNTIME_METHODS=["callMain","FS","FS_unlink"] \
+	-s EXPORTED_RUNTIME_METHODS=["FS","FS_unlink"] \
 	-s ENVIRONMENT="worker"
 
 all: jq.js

@@ -66,6 +66,11 @@ async function bench() {
   );
   const tComplex = performance.now();
 
+  for (let i = 0; i < 100; i++) {
+    await jq.run(".idols[0].name", path);
+  }
+  const t100 = performance.now();
+
   logTimes(
     tStart,
     "stringify",
@@ -83,7 +88,9 @@ async function bench() {
     "average query",
     tAvg,
     "complex query",
-    tComplex
+    tComplex,
+    "100 times",
+    t100
   );
 
   addBr();

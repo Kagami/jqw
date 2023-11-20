@@ -42,7 +42,7 @@ function jqwOnMessage(e) {
     self.postMessage({ "type": "set" });
   } else if (msg["type"] === "run") {
     jqwStdout = "";
-    Module["callMain"](msg["data"]);
+    withStackSave(() => callMain(msg["data"]));
     self.postMessage({ "type": "done", "data": jqwStdout });
   } else {
     Module["onAbort"]("unknown command");
