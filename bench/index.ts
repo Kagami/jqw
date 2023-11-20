@@ -1,6 +1,6 @@
 import profiles from "kpopnet.json";
-import moduleUrl from "./jq.js?url";
-import wasmUrl from "./jq.wasm?url";
+import moduleUrl from "../jq.js?url";
+import wasmUrl from "../jq.wasm?url";
 
 function addInfo(type: string, time: string) {
   const div = document.createElement("div");
@@ -41,7 +41,7 @@ async function bench() {
   const data = JSON.stringify(profiles);
   const tStr = performance.now();
 
-  const loadJQ = (await import("./index")).default;
+  const loadJQ = (await import("../index")).default;
   const tMainLoaded = performance.now();
 
   const jq = await loadJQ({ moduleUrl, wasmUrl, path, data });
