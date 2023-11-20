@@ -21,8 +21,10 @@ class JQHandler {
   writeFile(path: string, data: string): Promise<void> {
     return new Promise((resolve, reject) => {
       if (this.running) throw Error("already running");
+      this.running = true;
       this.worker.onmessage = (e) => {
         this.worker.onmessage = null; // wait for single msg only
+        this.running = false;
         const msg = e.data;
         if (msg.type === "set") {
           resolve();
@@ -48,10 +50,7 @@ class JQHandler {
           reject(Error(msg.data));
         }
       };
-      this.worker.postMessage({
-        type: "run",
-        data: args,
-      });
+      this.worker.postMessage({ type: "run", data: args });
     });
   }
 }

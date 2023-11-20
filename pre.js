@@ -1,7 +1,6 @@
 var jqwWasmResolve = null;
 var jqwWasmPromise = new Promise(resolve => jqwWasmResolve = resolve);
 var jqwLoaded = false;
-var jqwRunning = false;
 var jqwStdout = "";
 var wasmFS$backends; // FIXME(Kagami): closure bug, report
 
@@ -21,7 +20,7 @@ Module = {
     return {}; // no exports yet
   },
   "onRuntimeInitialized": function () { self.postMessage({ "type": "ready" }); },
-}
+};
 
 function jqwOnMessage(e) {
   var msg = e.data;
@@ -29,28 +28,26 @@ function jqwOnMessage(e) {
   if (msg["type"] === "load") {
     if (jqwLoaded) return Module["onAbort"]("already loaded");
     jqwLoaded = true;
-    if (msg["path"]) FS_createDataFile(".", msg["path"], msg["data"], true, true, false);
+    if (msg["path"]) FS_createDataFile(".", msg["path"], msg["data"], true, false, false);
     jqwWasmResolve(msg["url"]);
     return;
+  } else if (!jqwLoaded) {
+    Module["onAbort"]("not loaded");
+    return;
   }
-
-  if (!jqwLoaded) return Module["onAbort"]("not loaded");
-  if (jqwRunning) return Module["onAbort"]("already running");
 
   if (msg["type"] === "set") {
     FS_unlink(msg["path"]); // FIXME(Kagami): appends instead of overwriting, report
     FS_writeFile(msg["path"], msg["data"]);
     self.postMessage({ "type": "set" });
   } else if (msg["type"] === "run") {
-    jqwRunning = true;
     jqwStdout = "";
     Module["callMain"](msg["data"]);
     self.postMessage({ "type": "done", "data": jqwStdout });
-    jqwRunning = false;
   } else {
     Module["onAbort"]("unknown command");
   }
-};
+}
 
 self.onmessage = function (e) {
   try {
