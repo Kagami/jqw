@@ -10,6 +10,12 @@ export const defaultOpts: JQLoadOpts = {
   wasmUrl: "/static/jq.wasm",
 };
 
+export interface JQRunOpts {
+  path?: string /** path to the file in virtual FS */;
+  data?: string /** data of the file */;
+  args: string[] /** arguments to run JQ with */;
+}
+
 class JQHandler {
   private worker: Worker;
   private running: boolean = false;
@@ -18,7 +24,8 @@ class JQHandler {
     this.worker = worker;
   }
 
-  writeFile(path: string, data: string): Promise<void> {
+  /** Put file on virtual FS */
+  write({ path, data }: { path: string; data: string }): Promise<void> {
     return new Promise((resolve, reject) => {
       if (this.running) throw Error("already running");
       this.running = true;
@@ -36,15 +43,12 @@ class JQHandler {
     });
   }
 
-  run(...args: string[]): Promise<string> {
-    return this.writeRun("", args, "");
-  }
-
-  async writeRun(
-    data: string,
-    args: string[],
-    path = "data.json"
-  ): Promise<string> {
+  /** Run JQ with optional file data written beforehand */
+  async run(opts: JQRunOpts | string[]): Promise<string> {
+    if (Array.isArray(opts)) {
+      opts = { args: opts };
+    }
+    const { path, data, args } = opts;
     return new Promise((resolve, reject) => {
       if (this.running) throw Error("already running");
       this.running = true;

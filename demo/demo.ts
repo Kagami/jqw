@@ -10,6 +10,7 @@ let running = false;
 let jq: JQ;
 
 async function runInner() {
+  const path = "data.json";
   const data = doc.getElementById("input-json").value;
   const query = doc.getElementById("filter").value;
   const monochromeOutput = doc.getElementById("mono-output").checked;
@@ -19,26 +20,24 @@ async function runInner() {
   const rawOutput = doc.getElementById("raw-output").checked;
   const slurp = doc.getElementById("slurp").checked;
 
-  const options = monochromeOutput
-    ? ["--monochrome-output"]
-    : ["--color-output"];
+  const args = monochromeOutput ? ["--monochrome-output"] : ["--color-output"];
   if (compactOutput) {
-    options.push("--compact-output");
+    args.push("--compact-output");
   }
   if (sortKeys) {
-    options.push("--sort-keys");
+    args.push("--sort-keys");
   }
   if (rawInput) {
-    options.push("--raw-input");
+    args.push("--raw-input");
   }
   if (rawOutput) {
-    options.push("--raw-output");
+    args.push("--raw-output");
   }
   if (slurp) {
-    options.push("--slurp");
+    args.push("--slurp");
   }
-  options.push(query);
-  options.push("data.json");
+  args.push(query);
+  args.push(path);
 
   // Update url query params with current query
   const url = new URL(location.href);
@@ -46,7 +45,7 @@ async function runInner() {
   history.replaceState("", "", url);
 
   const start = performance.now();
-  let output = await jq.writeRun(data, options);
+  let output = await jq.run({ path, data, args });
   const end = performance.now();
   const elapsed = (end - start).toFixed(3);
   doc.getElementById("output-label").textContent = `Result (${elapsed}ms)`;

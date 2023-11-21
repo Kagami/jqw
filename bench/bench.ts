@@ -47,27 +47,27 @@ async function bench() {
   const jq = await loadJQ({ moduleUrl, wasmUrl, path, data });
   const tWorkerLoaded = performance.now();
 
-  const qSimple = await jq.run(".idols[0].name", path);
+  const qSimple = await jq.run([".idols[0].name", path]);
   const tSimple = performance.now();
 
-  const qSimple2 = await jq.run(".idols[0].name", path);
+  const qSimple2 = await jq.run([".idols[0].name", path]);
   const tSimple2 = performance.now();
 
-  const qAvg = await jq.run(
+  const qAvg = await jq.run([
     "[.idols[].height | select(. != null)] | add/length",
-    path
-  );
+    path,
+  ]);
   const tAvg = performance.now();
 
-  const qComplex = await jq.run(
+  const qComplex = await jq.run([
     '.groups | group_by(.debut_date[:4]) | sort_by(-length)[] | "\\(.[0].debut_date[:4]): \\(length)"',
     "-r",
-    path
-  );
+    path,
+  ]);
   const tComplex = performance.now();
 
   for (let i = 0; i < 100; i++) {
-    await jq.run(".idols[0].name", path);
+    await jq.run([".idols[0].name", path]);
   }
   const t100 = performance.now();
 
