@@ -76,7 +76,7 @@ function debounce(cb: Function, interval: number) {
   };
 }
 
-function sample() {
+function putSample() {
   doc.getElementById("filter").value = ".[].sha";
   doc.getElementById("input-json").value = sampleData;
   runJQ();
@@ -101,7 +101,7 @@ async function setup() {
   document.getElementById("raw-input")!.addEventListener("input", runJQ);
   document.getElementById("raw-output")!.addEventListener("input", runJQ);
   document.getElementById("slurp")!.addEventListener("input", runJQ);
-  document.getElementById("input-sample")!.addEventListener("click", sample);
+  document.getElementById("input-sample")!.addEventListener("click", putSample);
 }
 
 setup();
