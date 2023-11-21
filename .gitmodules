@@ -2,3 +2,7 @@
 	path = jq
 	url = https://github.com/jqlang/jq.git
 	ignore = dirty
+[submodule "jq-re"]
+	path = jq-re
+	url = https://github.com/jqlang/jq.git
+	ignore = dirty

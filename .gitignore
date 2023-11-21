@@ -1,5 +1,5 @@
 node_modules
-/jq.js
-/jq.wasm
+/jq*.js
+/jq*.wasm
 /lib/
 /demo/dist/
