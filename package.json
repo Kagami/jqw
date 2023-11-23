@@ -8,7 +8,8 @@
   "scripts": {
     "start": "vite",
     "build": "cd demo && vite build",
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "tsc",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",

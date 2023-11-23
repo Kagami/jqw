@@ -6,10 +6,9 @@ import wasmUrl from "../jq.wasm?url";
 import sampleData from "./sample.json?raw";
 
 const doc: any = document;
-let running = false;
 let jq: JQ;
 
-async function runInner() {
+async function runJQ() {
   const path = "data.json";
   const data = doc.getElementById("input-json").value;
   const query = doc.getElementById("filter").value;
@@ -45,7 +44,7 @@ async function runInner() {
   history.replaceState("", "", url);
 
   const start = performance.now();
-  let output = await jq.run({ path, data, args });
+  const output = await jq.run({ path, data, args });
   const end = performance.now();
   const elapsed = (end - start).toFixed(3);
   doc.getElementById("output-label").textContent = `Result (${elapsed}ms)`;
@@ -57,13 +56,6 @@ async function runInner() {
     const html = ansi_up.ansi_to_html(output);
     doc.getElementById("output-json").innerHTML = html;
   }
-}
-
-async function runJQ() {
-  if (running) return;
-  running = true;
-  await runInner();
-  running = false;
 }
 
 // buffer and call the callback only after no activity for "interval": aka debounce

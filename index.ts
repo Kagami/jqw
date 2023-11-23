@@ -18,20 +18,23 @@ export interface JQRunOpts {
 
 class JQHandler {
   private worker: Worker;
-  private running: boolean = false;
+  private running: Promise<any>[];
 
   constructor(worker: Worker) {
     this.worker = worker;
+    this.running = [];
   }
 
   /** Put file on virtual FS */
-  write({ path, data }: { path: string; data: string }): Promise<void> {
-    return new Promise((resolve, reject) => {
-      if (this.running) throw Error("already running");
-      this.running = true;
+  async write({ path, data }: { path: string; data: string }): Promise<void> {
+    while (this.running.length) {
+      const p = this.running[0];
+      await p;
+      this.running = this.running.filter((x) => x !== p);
+    }
+    const p = new Promise<void>((resolve, reject) => {
       this.worker.onmessage = (e) => {
         this.worker.onmessage = null; // wait for single msg only
-        this.running = false;
         const msg = e.data;
         if (msg.type === "set") {
           resolve();
@@ -41,6 +44,8 @@ class JQHandler {
       };
       this.worker.postMessage({ type: "set", path, data });
     });
+    this.running.push(p);
+    return p;
   }
 
   /** Run JQ with optional file data written beforehand */
@@ -49,14 +54,22 @@ class JQHandler {
       opts = { args: opts };
     }
     const { path, data, args } = opts;
-    return new Promise((resolve, reject) => {
-      if (this.running) throw Error("already running");
-      this.running = true;
+
+    // console.log("@@@ wait", this.running.length);
+    while (this.running.length) {
+      const p = this.running[0];
+      await p;
+      this.running = this.running.filter((x) => x !== p);
+    }
+    // console.log("@@@ done waiting");
+
+    // console.log("@@@ starting req");
+    const p = new Promise<string>((resolve, reject) => {
       this.worker.onmessage = (e) => {
         this.worker.onmessage = null; // wait for single msg only
-        this.running = false;
         const msg = e.data;
         if (msg.type === "done") {
+          // console.log("@@@ run done");
           resolve(msg.data);
         } else {
           reject(Error(msg.data));
@@ -64,6 +77,9 @@ class JQHandler {
       };
       this.worker.postMessage({ type: "run", path, data, args });
     });
+    // console.log("@@@ pushed promise");
+    this.running.push(p);
+    return p;
   }
 }
 
